@@ -1,0 +1,3 @@
+[submodule "contracts/mimir-bonding-curve-sales-contract"]
+	path = contracts/mimir-bonding-curve-sales-contract
+	url = git@github.com:Mimir-Solutions/mimir-bonding-curve-sales-contract.git
