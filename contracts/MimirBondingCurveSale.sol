@@ -84,7 +84,7 @@ contract MimirBondingCurveSale is Ownable {
         }
     }
 
-    function withdrawProvidedETH() external onlyOwner {
+    function withdrawProvidedETH() external onlyOwner() {
         require(END < block.timestamp, "The offering must be completed");
         require(
             totalProvided >= MINIMAL_PROVIDE_AMOUNT,
@@ -93,7 +93,7 @@ contract MimirBondingCurveSale is Ownable {
         payable(owner()).transfer(address(this).balance);
     }
 
-    function withdrawMimir() external onlyOwner {
+    function withdrawMimir() external onlyOwner() {
         require(END < block.timestamp, "The offering must be completed");
         require(
             totalProvided < MINIMAL_PROVIDE_AMOUNT,
@@ -102,7 +102,7 @@ contract MimirBondingCurveSale is Ownable {
         SAFEMIMIRTOKEN.safeTransfer(owner(), MIMIRTOKEN.balanceOf(address(this)));
     }
 
-    function withdrawUnclaimedHEGIC() external onlyOwner {
+    function withdrawUnclaimedMimir() external onlyOwner() {
         require(END + 30 days < block.timestamp, "Withdrawal unavailable yet");
         SAFEMIMIRTOKEN.safeTransfer(owner(), MIMIRTOKEN.balanceOf(address(this)));
     }
