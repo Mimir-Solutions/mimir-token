@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "LPNFTSalePlatform",
+  "sourceName": "contracts/dependencies/mimir-solutions-sales-protocol/contracts/LPNFTSalePlatform.sol",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220cd57fb3366b6ca70331a09c7c9de5e7529f8682c1651eff9ec2f34d66b092e3d64736f6c63430007040033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220cd57fb3366b6ca70331a09c7c9de5e7529f8682c1651eff9ec2f34d66b092e3d64736f6c63430007040033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

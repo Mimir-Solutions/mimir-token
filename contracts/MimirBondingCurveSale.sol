@@ -1,4 +1,6 @@
-pragma solidity 0.6.12;
+pragma solidity 0.7.4;
+
+import "hardhat/console.sol";
 
 /**
  * SPDX-License-Identifier: GPL-3.0-or-later
@@ -22,6 +24,7 @@ pragma solidity 0.6.12;
 import "./dependencies/holyzeppelin/contracts/token/ERC20/SafeERC20.sol";
 import "./dependencies/holyzeppelin/contracts/token/ERC20/IERC20.sol";
 import "./dependencies/holyzeppelin/contracts/access/Ownable.sol";
+import "./dependencies/holyzeppelin/contracts/security/Context.sol";
 
 
 /**
@@ -31,56 +34,59 @@ import "./dependencies/holyzeppelin/contracts/access/Ownable.sol";
  */
 contract MimirBondingCurveSale is Ownable {
     using SafeMath for uint;
+    using SafeERC20 for IERC20;
 
+    event SaleStarted( uint256 saleStatTime, uint256 saleEndTime );
     event Claimed(address indexed account, uint userShare, uint mimirAmount);
     event Received(address indexed account, uint amount);
 
-    uint public immutable START;
-    uint public immutable END;
-    uint public immutable TOTAL_DISTRIBUTE_AMOUNT;
-    uint public immutable MINIMAL_PROVIDE_AMOUNT = 600 ether;
+    uint public START;
+    uint public END;
+    uint public TOTAL_DISTRIBUTE_AMOUNT;
+    uint public MINIMAL_PROVIDE_AMOUNT = 600 ether;
     uint public totalProvided = 0;
     mapping(address => uint) public provided;
-    IERC20 public immutable MIMIRTOKEN;
-    SafeERC20 public immutable SAFEMIMIRTOKEN;
+    IERC20 public MIMIRTOKEN;
+    // ERC20 public immutable SAFEMIMIRTOKEN;
 
-    constructor() public {}
+    constructor() {}
 
     function setTokenForSale( IERC20 mimirToken_ ) public onlyOwner() {
         MIMIRTOKEN = mimirToken_;
-        SAFEMIMIRTOKEN = mimirToken_;
-        TOTAL_DISTRIBUTE_AMOUNT = mimirToken_.totalSupply();
+        // SAFEMIMIRTOKEN = mimirToken_;
+        TOTAL_DISTRIBUTE_AMOUNT = mimirToken_.balanceOf( address(this) );
     }
 
     function startSale() public onlyOwner() {
         START = block.timestamp;
         END = START + 3 days;
+        emit SaleStarted( START, END );
     }
 
     receive() external payable {
         require(START <= block.timestamp, "The offering has not started yet");
         require(block.timestamp <= END, "The offering has already ended");
         totalProvided += msg.value;
-        provided[_msgSender()] += msg.value;
-        emit Received(_msgSender(), msg.value);
+        provided[Context._msgSender()] += msg.value;
+        emit Received(Context._msgSender(), msg.value);
     }
 
     function claim() external {
         require(block.timestamp > END);
-        require(provided[_msgSender()] > 0);
+        require(provided[Context._msgSender()] > 0);
 
-        uint userShare = provided[_msgSender()];
-        provided[_msgSender()] = 0;
+        uint userShare = provided[Context._msgSender()];
+        provided[Context._msgSender()] = 0;
 
         if(totalProvided >= MINIMAL_PROVIDE_AMOUNT) {
             uint mimirAmount = TOTAL_DISTRIBUTE_AMOUNT
                 .mul(userShare)
                 .div(totalProvided);
-            MIMIRTOKEN.safeTransfer(_msgSender(), mimirAmount);
-            emit Claimed(_msgSender(), userShare, mimirAmount);
+            MIMIRTOKEN.safeTransfer(Context._msgSender(), mimirAmount);
+            emit Claimed(Context._msgSender(), userShare, mimirAmount);
         } else {
-            _msgSender().transfer(userShare);
-            emit Claimed(_msgSender(), userShare, 0);
+            Context._msgSender().transfer(userShare);
+            emit Claimed(Context._msgSender(), userShare, 0);
         }
     }
 
@@ -99,11 +105,11 @@ contract MimirBondingCurveSale is Ownable {
             totalProvided < MINIMAL_PROVIDE_AMOUNT,
             "The required amount has been provided!"
         );
-        SAFEMIMIRTOKEN.safeTransfer(owner(), MIMIRTOKEN.balanceOf(address(this)));
+        MIMIRTOKEN.safeTransfer(owner(), MIMIRTOKEN.balanceOf(address(this)));
     }
 
     function withdrawUnclaimedMimir() external onlyOwner() {
         require(END + 30 days < block.timestamp, "Withdrawal unavailable yet");
-        SAFEMIMIRTOKEN.safeTransfer(owner(), MIMIRTOKEN.balanceOf(address(this)));
+        MIMIRTOKEN.safeTransfer(owner(), MIMIRTOKEN.balanceOf(address(this)));
     }
 }

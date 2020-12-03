@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "LPTokenNFTWrapper",
+  "sourceName": "contracts/dependencies/mimir-solutions-sales-protocol/contracts/LPTokenNFTWrapper.sol",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212204714457b835b967f4bc9db46e40507490096f57af1ab7ebca4fee45964a48b1864736f6c63430007040033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212204714457b835b967f4bc9db46e40507490096f57af1ab7ebca4fee45964a48b1864736f6c63430007040033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

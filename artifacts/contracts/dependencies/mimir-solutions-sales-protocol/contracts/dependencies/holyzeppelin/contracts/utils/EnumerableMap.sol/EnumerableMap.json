@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "EnumerableMap",
+  "sourceName": "contracts/dependencies/mimir-solutions-sales-protocol/contracts/dependencies/holyzeppelin/contracts/utils/EnumerableMap.sol",
+  "abi": [],
+  "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212208866fe1dfe65af7182e0ff5309e2dd7b4f17d471c0f6ecbcb2a007b6648bba0d64736f6c63430007040033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212208866fe1dfe65af7182e0ff5309e2dd7b4f17d471c0f6ecbcb2a007b6648bba0d64736f6c63430007040033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

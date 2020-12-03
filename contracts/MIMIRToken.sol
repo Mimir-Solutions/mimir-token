@@ -9,7 +9,6 @@ contract MimirToken is Divine {
 
     constructor () Divine() {
         console.log("MimirToken::constructor: Instantiating MimirToken");
-        // _mint(_msgSender(), 50000 * 1**decimals()  );
         console.log("MimirToken::constructor: Instantiated MimirToken");
     }
 }

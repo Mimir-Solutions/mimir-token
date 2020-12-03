@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "QPLGMEMinter",
+  "sourceName": "contracts/dependencies/mimir-solutions-sales-protocol/contracts/QPLGMEMinter.sol",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220554f886fe2646f02cea75f80227e692d1a4be1ed99e366ff9806cea7db6edfec64736f6c63430007040033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220554f886fe2646f02cea75f80227e692d1a4be1ed99e366ff9806cea7db6edfec64736f6c63430007040033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

@@ -1,0 +1,16 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ReentrancyGuard",
+  "sourceName": "contracts/dependencies/mimir-solutions-sales-protocol/contracts/dependencies/holyzeppelin/contracts/utils/ReentrancyGuard.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b506001600055603f8060226000396000f3fe6080604052600080fdfea2646970667358221220606208329a7bdcc5789770e4692fa53d95fbfbee5714f9538edf8c495dc90d1364736f6c63430007040033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220606208329a7bdcc5789770e4692fa53d95fbfbee5714f9538edf8c495dc90d1364736f6c63430007040033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

@@ -1,0 +1,105 @@
+{
+  "id": "4cc35c9e-10f7-48df-b92d-695ff8cc15ac",
+  "_format": "hh-sol-build-info-1",
+  "solcVersion": "0.7.4",
+  "solcLongVersion": "0.7.4+commit.3f05b770",
+  "input": {
+    "language": "Solidity",
+    "sources": {
+      "contracts/dependencies/mimir-solutions-sales-protocol/contracts/QPLGMEMinter.sol": {
+        "content": "// SPDX-License-Identifier: AGPL-3.0-or-later\r\npragma solidity 0.7.4;\r\n\r\ncontract QPLGMEMinter {\r\n\r\n    \r\n}"
+      }
+    },
+    "settings": {
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers"
+          ],
+          "": [
+            "ast"
+          ]
+        }
+      }
+    }
+  },
+  "output": {
+    "contracts": {
+      "contracts/dependencies/mimir-solutions-sales-protocol/contracts/QPLGMEMinter.sol": {
+        "QPLGMEMinter": {
+          "abi": [],
+          "evm": {
+            "bytecode": {
+              "generatedSources": [],
+              "linkReferences": {},
+              "object": "6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220554f886fe2646f02cea75f80227e692d1a4be1ed99e366ff9806cea7db6edfec64736f6c63430007040033",
+              "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x3F DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SSTORE 0x4F DUP9 PUSH16 0xE2646F02CEA75F80227E692D1A4BE1ED SWAP10 0xE3 PUSH7 0xFF9806CEA7DB6E 0xDF 0xEC PUSH5 0x736F6C6343 STOP SMOD DIV STOP CALLER ",
+              "sourceMap": "73:34:0:-:0;;;;;;;;;;;;;;;;;;;"
+            },
+            "deployedBytecode": {
+              "generatedSources": [],
+              "immutableReferences": {},
+              "linkReferences": {},
+              "object": "6080604052600080fdfea2646970667358221220554f886fe2646f02cea75f80227e692d1a4be1ed99e366ff9806cea7db6edfec64736f6c63430007040033",
+              "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SSTORE 0x4F DUP9 PUSH16 0xE2646F02CEA75F80227E692D1A4BE1ED SWAP10 0xE3 PUSH7 0xFF9806CEA7DB6E 0xDF 0xEC PUSH5 0x736F6C6343 STOP SMOD DIV STOP CALLER ",
+              "sourceMap": "73:34:0:-:0;;;;;"
+            },
+            "methodIdentifiers": {}
+          }
+        }
+      }
+    },
+    "sources": {
+      "contracts/dependencies/mimir-solutions-sales-protocol/contracts/QPLGMEMinter.sol": {
+        "ast": {
+          "absolutePath": "contracts/dependencies/mimir-solutions-sales-protocol/contracts/QPLGMEMinter.sol",
+          "exportedSymbols": {
+            "QPLGMEMinter": [
+              2
+            ]
+          },
+          "id": 3,
+          "license": "AGPL-3.0-or-later",
+          "nodeType": "SourceUnit",
+          "nodes": [
+            {
+              "id": 1,
+              "literals": [
+                "solidity",
+                "0.7",
+                ".4"
+              ],
+              "nodeType": "PragmaDirective",
+              "src": "47:22:0"
+            },
+            {
+              "abstract": false,
+              "baseContracts": [],
+              "contractDependencies": [],
+              "contractKind": "contract",
+              "fullyImplemented": true,
+              "id": 2,
+              "linearizedBaseContracts": [
+                2
+              ],
+              "name": "QPLGMEMinter",
+              "nodeType": "ContractDefinition",
+              "nodes": [],
+              "scope": 3,
+              "src": "73:34:0"
+            }
+          ],
+          "src": "47:60:0"
+        },
+        "id": 0
+      }
+    }
+  }
+}
