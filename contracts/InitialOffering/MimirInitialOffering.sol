@@ -46,7 +46,7 @@ contract MIMIRInitialOffering is Ownable {
     mapping(address => uint) public provided;
     IERC20 public MIMIR;
 
-    constructor() public {
+    constructor() {
         // MIMIR = MIMIR;
     }
 
